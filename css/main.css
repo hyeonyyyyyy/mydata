@@ -1,0 +1,1321 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, enter, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; background: transparent; font-size: 100%; vertical-align: baseline; }
+
+html, body { width: 100%; height: 100%; overflow-x: hidden;  font: 300 17px/30px "Noto Sans KR", sans-serif;}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ul, ol, li { list-style: none; }
+
+a { text-decoration: none; color: inherit; }
+
+img { vertical-align: top; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { border: none; }
+
+button { border: none; background: transparent; font-family: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+button:active { outline: none; }
+button:focus { outline: none; }
+
+.clearfix::after { content: ""; display: block; clear: both; }
+
+.blind { overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); width: 1px; height: 1px; margin: -1px; }
+.over_bg{
+    position: fixed;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    display: none;
+}
+
+header{
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+.header_inner{
+    width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 27px 32px;
+    position: relative;
+    z-index: 10;
+}
+nav > ul{
+    display: flex;
+    text-align: center;
+    gap: 70px;
+    justify-content: space-between;
+    margin-left: 320px;
+    align-items: center;
+
+}
+nav > ul > li > a{
+    color: #222;
+    font-size: 19px;
+    font-weight: 500;
+}
+nav ul li{
+    position: relative;
+}
+
+
+/* 서브메뉴 */
+nav ul li ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+nav ul li ul li {
+    padding: 7px 30px;
+}
+.sub{
+    display: none;
+}
+nav .sub{
+    padding-top: 30px;
+}
+nav .sub_wrap{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav .sub_wrap li{
+    white-space: nowrap;
+}
+header .sub_bg{
+    width: 100%;
+    height: 270px;
+    background-color: #fff;
+    position: absolute;
+    top: 4.5vw;
+    display: none;
+}
+nav ul li ul li a{
+    color: #aaa;
+    transition: all 0.3s;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 15px;
+}
+nav ul > li > a::after{
+    content: '';
+    display: inline-block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background: #0E81A0;
+    left: 50%;
+    bottom: -28px;
+    transition: all 0.2s;
+    transform: translateX(-50%);
+}
+
+/* 호버시 */
+nav ul li:hover .sub a{
+    color: #222;
+}
+nav ul li .sub li a:hover{
+    color: #0E81A0;
+}
+nav > ul > li:hover > a{
+    color: #0e81a0;
+}
+nav > ul > li:hover > a::after{
+    width: 70px;
+}
+
+.all{
+    background: url(../img/all_menu.png) no-repeat;
+    width: 19px;
+    height: 19px;
+    transition: all 0.2s;
+    margin-top: 7px;
+    cursor: pointer;
+}
+.all:hover{
+    background: url(../img/all_menu_on.png) no-repeat;
+}
+
+/* 메인 */
+.wrap{
+    position: relative;
+}
+.main_bg{
+    background: url(../img/rowgroup_bg.png);
+    padding-bottom: 75px;
+    width: 100%;
+    background-position: center;
+    position: absolute;
+    padding-bottom: 680px;
+    z-index: 0;
+}
+.main_bg::before{
+    content: '';
+    display: inline-block;
+    width: 278px;
+    height: 221px;
+    background: url(../img/main_bg.png)no-repeat 50% 50%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -2;
+}
+.main_bg::after{
+    content: '';
+    display: inline-block;
+    width: 171px;
+    height: 257px;
+    background: url(../img/cont_cc02.png)no-repeat 50% 50%;
+    position: absolute;
+    bottom: -100px;
+    right: 80px;
+    z-index: -1;
+}
+.main{
+    width: 1380px;
+    margin: 0 auto;
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+
+}
+.main .main_inner{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    position: relative;
+}
+.s1{
+     background: url(../img/20221213163643610794.jpg) no-repeat 50% 50%;
+}
+.s2{
+    background: url(../img/20221213164041839664.jpg) no-repeat 50% 50%;
+}
+.main_left{
+    width: 470px;
+    height: 520px;
+    position: relative;
+}
+.main_left .swiper{
+    border-radius: 30px;
+}
+.main_left .swiper-pagination{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;    
+    gap: 10px;
+}
+
+.main_left .swiper-pagination-bullet{
+    background: #0E81A0;
+    padding: 5px;
+}
+
+
+
+/* search */
+.search{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+.search h2{
+    font-weight: 500;
+    font-size: 22px;
+    color: #0E81A0;
+    margin-right: 15px;
+    padding-top: 20px;
+}
+.search input{
+    height: 66px;
+    border: 2px solid #0E81A0;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 25px;
+    font: 400 17px/22px "Poppins", "Noto Sans KR", sans-serif;
+    color: #444;
+    width: 650px;
+    outline: none;
+}
+.search button{
+    background-color: #0E81A0;
+    width: 65px;
+    height: 65px;
+    transition: all 0.2s;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;
+}
+.search button img{
+    margin-left: 20px;
+}
+.search .tag{
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+    gap: 25px;
+}
+.search .tag a{
+    color: #72949b;
+    font-weight: 400;
+    font-size: 17px;
+}
+.main_right .table{
+    margin-top: 40px;
+}
+.main_right .table ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px 6px rgba(0,0,0,0.07);
+    background: #fff;
+}
+.main_right .table ul li a{
+        display: flex;
+    font: 400 18px/22px "Poppins", "Noto Sans KR", sans-serif;
+    color: #111;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.2s;
+    align-items: center;
+    padding: 12% 5%;
+    word-break: keep-all;
+}
+.main_right .table ul li a > span{
+    display: flex;
+    flex-direction: column;
+}
+.main_right .table ul li a .text{
+    color: #888;
+    font-size: 15px;
+    font-weight: 300;
+}
+.main_right .table li:nth-child(-n+3) a {
+    border-bottom: 1px solid #eee;
+}
+.main_right .table ul li a:after{
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 60px;
+    background: #eee;
+    position: absolute;
+    right: 0;
+}
+.main_right .table ul li a:before{
+    display: inline-block;
+    content: '';
+    width: 90px;
+    height: 90px;
+    background: url(../img/quick01.png)no-repeat 70% 50%;
+    transition: all 0.2s;
+}
+.main_right .table ul li:nth-child(2) a:before{
+     background: url(../img/quick02.png)no-repeat 70% 50%;
+}
+.main_right .table ul li:nth-child(3) a:before{
+     background: url(../img/quick03.png)no-repeat 70% 50%;
+}
+.main_right .table ul li:nth-child(4) a:before{
+     background: url(../img/quick04.png)no-repeat 70% 50%;
+}
+.main_right .table ul li:nth-child(5) a:before{
+     background: url(../img/quick05.png)no-repeat 70% 50%;
+}
+.main_right .table ul li:last-child a:before{
+     background: url(../img/quick06.png)no-repeat 70% 50%;
+}
+
+.main_right .table ul li a:hover{
+    color: #008859;
+    background-color: #f3fcf8;
+}
+.table ul li a:hover:before {
+    background-position-y: 38%;
+}
+.main_right .table ul li:nth-child(2) a:hover:before{
+    background-position-y: 38%;
+}
+.main_right .table ul li:nth-child(3) a:hover:before{
+    background-position-y: 38%;
+}
+.main_right .table ul li:nth-child(4) a:hover:before{
+    background-position-y: 38%;
+}
+.main_right .table ul li:nth-child(5) a:hover:before{
+    background-position-y: 38%;
+}
+.main_right .table ul li:last-child a:hover:before{
+    background-position-y: 38%;
+}
+
+
+.bar{
+    height: 150px;
+    width: 1600px;
+    background-color: #0E81A0;
+    position: absolute;
+    margin-top: 40px;
+    border-radius: 0 20px 20px 0;
+}
+.bar p{
+    font: 500 20px "Noto Sans KR", sans-serif;
+    color: #fff;
+    width: 95px;
+    border-right: 1px solid #449fb8;
+}
+.bar .bar_inner{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 30px;
+    padding-top: 30px;
+}
+.bar .bar_inner ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 50px;
+    gap: 11px;
+}
+.bar .bar_inner ul li a{
+    display: block;
+    text-align: center;
+    font: 400 17px "Noto Sans KR", sans-serif;
+    color: #fff;
+    width: 90px;
+    height: 90px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.bar .bar_inner ul li a::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: url(../img/cate001.png)no-repeat 50% 50%;
+    margin-bottom: 8px;
+}
+.bar .bar_inner ul li:nth-child(2) a:before{
+    background: url(../img/cate002.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(3) a:before{
+    background: url(../img/cate003.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(4) a:before{
+    background: url(../img/cate004.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(5) a:before{
+    background: url(../img/cate005.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(6) a:before{
+    background: url(../img/cate006.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(7) a:before{
+    background: url(../img/cate007.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(8) a:before{
+    background: url(../img/cate008.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(9) a:before{
+    background: url(../img/cate009.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:nth-child(10) a:before{
+    background: url(../img/cate010.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul li:last-child a:before{
+    background: url(../img/all_icon.png)no-repeat 50% 50%;
+}
+.bar .bar_inner ul .all_menu{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #07627c;
+    border-radius: 50%;
+    text-align: center;
+    font: 400 15px "Noto Sans KR", sans-serif;
+    white-space: nowrap;
+    transition: all 0.2s;
+    padding-top: 10px;
+}
+.bar .bar_inner ul li a:hover{
+    background: #0e8bb0;
+    border-radius: 10px;
+}
+.bar .bar_inner ul .all_menu:hover {
+    background: #008859;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    font: 400 15px "Noto Sans KR", sans-serif;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+/* 서비스 */
+.service{
+    width: 1380px;
+    margin: 0 auto;
+    padding-top: 300px;
+}
+.service .service_inner{
+    display: flex;
+    flex-direction: column;
+}
+.service h2{
+    font: 600 28px   "Noto Sans KR", sans-serif;
+    color: #222;
+    margin-bottom: 20px;
+}
+.ser_top{
+    display: flex;
+    padding: 0 20px;
+    gap: 40px;
+    align-items: center;
+}
+
+.advice{
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 50px;
+}
+.advice p{
+    font: 600 25px "Noto Sans KR", sans-serif;
+    color: #222;
+    padding: 0 10px;
+}
+.advice p .color{
+    color:  #0E81A0;
+}
+.advice small{
+    font: 300 16px "Noto Sans KR", sans-serif;
+    color: #888;
+    margin: 10px 0 40px;
+    padding: 0 10px;
+}
+.advice .btn{
+    display: inline-block;
+    border: 2px solid #0E81A0;
+    text-align: center;
+    padding: 14px 10px;
+    font: 500 17px "Noto Sans KR", sans-serif;
+    color: #0E81A0;
+    border-radius: 30px;
+    transition: all 0.2s;
+    width: 180px;
+}
+.advice .btn:hover{
+    background: #0E81A0;
+    color: #fff;
+}
+.api{
+    padding: 20px 20px 30px 0;
+    width: 450px;
+}
+.api .api_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.api h3{
+    font: 600 20px "Noto Sans KR", sans-serif;
+    color: #222;
+}
+.api .api_title a{
+    font-size: 0;
+    padding: 10px;
+    background: #fff url(../img/more.png)50% 50% no-repeat;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #ddd;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+.api .api_title a:hover{
+    background: #008859 url(../img/more_on.png)50% 50% no-repeat;
+    border: solid 1px #008859;
+}
+.api ul li{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;   
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0px;
+}
+.api ul li:last-child{
+    border:none;
+}
+.api ul li a{
+    font: 400 18px "Noto Sans KR", sans-serif;
+    color: #222;
+}
+.api ul li a::before{
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: #333;
+    content: '';
+    vertical-align: 4px;
+    margin-right: 6px;
+}
+.api ul li span{
+    font: 300 16px "Noto Sans KR", sans-serif;
+    color: #888;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+}
+.guide{
+   position: relative;
+   z-index: 100;
+}
+.guide_inner{
+    background-color: #0C8487;
+    display: flex;
+    padding: 20px 0 20px 170px;
+    border-radius: 60px 0 30px 30px;
+    gap: 70px;
+    position: absolute;
+    bottom: -105px;
+    width: 1340px;
+}
+
+.guide ul{
+   display: flex;
+   align-items: center;
+   gap: 110px;
+   margin-left: 30px;
+}
+.guide p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #0c9194;
+    width: 125px;
+    text-align: center;
+    border-radius: 60px 60px 0px 20px;
+    font: 600 20px "Noto Sans KR", sans-serif;
+    color: #fff;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-top: 50px;
+}
+.guide p span{
+    font: 300 18px "Noto Sans KR", sans-serif;
+    color: #46ecef;
+}
+.guide ul li a{
+    display: block;
+    text-align: center;
+    font: 500 16px "Noto Sans KR", sans-serif;
+    color: #fff;
+    background: url(../img/gd01.png)no-repeat 50% 0%;
+    padding-top: 55px;
+    position: relative;
+    transition: all 0.3s;
+}
+.guide ul li:nth-child(2) a{
+    background: url(../img/gd02.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(3) a{
+    background: url(../img/gd03.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(4) a{
+    background: url(../img/gd04.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(5) a{
+    background: url(../img/gd05.png)no-repeat 50% 0%;
+}
+.guide ul li:last-child a{
+    background: url(../img/gd06.png)no-repeat 50% 0%;
+}
+.guide ul li a::before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 75px;
+    background: #299c9f;
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.guide ul li:last-child a::before{
+    background: none;
+}
+.guide ul li a:hover{
+    color: #ecff0d;
+}
+.guide ul li:first-child a:hover{
+    background: url(../img/gd01_on.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(2) a:hover{
+    background: url(../img/gd02_on.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(3) a:hover{
+    background: url(../img/gd03_on.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(4) a:hover{
+    background: url(../img/gd04_on.png)no-repeat 50% 0%;
+}
+.guide ul li:nth-child(5) a:hover{
+    background: url(../img/gd05_on.png)no-repeat 50% 0%;
+}
+.guide ul li:last-child a:hover{
+    background: url(../img/gd06_on.png)no-repeat 50% 0%;
+}
+
+/* 체험 */
+.ex_wrap{
+    padding-top: 200px;
+}
+.experience{
+    position: relative;
+    background:linear-gradient(180deg, rgba(255,255,255,1) 36%, rgba(226,251,242,1) 49%, rgba(235,252,246,1) 90%, rgba(255,255,255,1) 82%);
+}
+
+.experience .exper-txt{
+    width: 1380px;
+    margin: 0 auto;
+    background: url(../img/exper_bg.png) no-repeat right 12% bottom 0%;
+}
+.experience .exper-txt .p-tit{
+    font: 600 28px "Noto Sans KR", sans-serif;
+    color: #222;
+    margin-bottom: 20px;
+    background: url(../img/quotes.png) no-repeat 0 0;
+    padding: 50px 40px 0;
+}
+.experience .swiper{
+    overflow: visible;
+}
+.experience .exper-txt .p-tit span{
+    color: #0E81A0;
+}
+.experience .exper-txt .p-txt{
+    font: 300 18px "Noto Sans KR", sans-serif;
+    color: #888;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+  .exper-swiper .swiper-wrapper{align-items: center;}
+  .exper-swiper {
+    padding-bottom: 80px !important;
+    height: 700px;
+  }
+  
+  .exper-swiper .swiper-wrapper .swiper-slide {
+    border-radius: 50%;
+    height:200px !important;
+    width: 300px !important;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .exper-swiper .swiper-wrapper .swiper-slide img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .exper-swiper .swiper-wrapper .swiper-slide a{
+    background: #Fff url(../img/exper_plus.png) center center no-repeat;
+    width: 65px; 
+    height: 65px; 
+    border: 1px solid; 
+    border-radius: 50%; 
+    position: absolute;
+    right: 1px; 
+    top: 53%;
+    font-size: 0;
+    transition: all 0.1s;
+    display: none;
+  }
+  .exper-swiper .swiper-wrapper .swiper-slide.active a{display: block; border: none;}
+  .exper-swiper .swiper-wrapper .swiper-slide a:hover{background: #0E81A0 url(../img/exper_plus_on.png) center center no-repeat;}
+  .exper-swiper .swiper-wrapper .swiper-slide.active{height: 700px !important;width: 390px !important;}
+  .exper-swiper .swiper-wrapper .swiper-slide.active .talk{animation: buble 1s; display: block;}
+  .exper-swiper .swiper-slide.active img{width: 390px; height: 390px;}
+  .exper-swiper .swiper-wrapper .swiper-slide span{
+    width: 270px; 
+    text-align: center; 
+    display: block;
+    background: #56af7f; 
+    color: #fff; 
+    font-weight: 500; 
+    font-size: 21px; 
+    padding: 20px 10px; 
+    line-height: 30px;
+    border-radius: 30px; position: absolute; top: 17px; 
+    }
+  .exper-swiper .swiper-wrapper .swiper-slide span::before{
+    content: ""; 
+    display: block; 
+    width: 14px; 
+    height: 12px; 
+    background: url(../img/bubble.png) center center no-repeat ; 
+    bottom: -10px; 
+    left: 50%; 
+    transform: translate(-50%);
+    position: absolute;
+}
+  .exper-swiper .swiper-wrapper .swiper-slide .talk{display: none;}
+  .exper-swiper .swiper-wrapper .swiper-slide .text{text-align: center; color: #8fb0a4; font-size: 18px;}
+  .exper-swiper .swiper-wrapper .swiper-slide .text:hover{color:#324d43; ;}
+  .exper-swiper .swiper-wrapper .swiper-slide .text b{display: none;}
+  .exper-swiper .swiper-wrapper .swiper-slide.active .text b{display: block; font-size: 21px; font-weight: 600;}
+  .exper-swiper .swiper-wrapper .swiper-slide.active .text{font-size: 21px; line-height: 30px; color: #000;}
+  @keyframes buble{
+    0%{opacity: 0; top:100px;}
+    100%{opacity: 1; top: 17px;}
+  }
+.experience .swiper-button-next::after, .experience .swiper-button-prev::after{
+    content: '';
+}
+.experience .swiper-button-next{
+    background: url(../img/exper_next.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 12px;
+    top: 30px;
+    right: 79%;
+}
+.experience .swiper-button-prev{
+    background: url(../img/exper_prev.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 12px;
+    top: 30px;
+    left: 16%;
+}
+.experience .swiper-pagination-fraction{
+    position: absolute;
+    top: -2px;
+    left: 17.2%;
+    width: 50px;
+}
+
+/* 추천 */
+
+.recom{
+    margin: 0 auto;
+    width: 1380px;
+}
+.recom .recom_inner{
+    position: relative;
+}
+.recom .recom_inner .recom_tt{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.recom .recom_inner .recom_tt h2{
+    font: 500 28px "Noto Sans KR", sans-serif;
+    color: #222;
+} 
+.recom .recom_inner .recom_tt a{
+    font-size: 0;
+    padding: 10px;
+    background: #fff url(../img/more.png)50% 50% no-repeat;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #ddd;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+.recom .recom_inner .recom_tt a:hover{
+    background: #008859 url(../img/more_on.png)50% 50% no-repeat;
+    border: solid 1px #008859;
+}
+.recom .reco_wrap .recoSwiper{
+    background: #fff;
+    box-shadow: 0px 8px 20px 6px rgb(0 0 0 / 7%);
+    border-radius: 5px;
+}
+.recom .recom_inner .swiper-pagination{
+    top: 390px;
+    width: 1200px;
+}
+.recom .recom_inner .swiper-pagination-progressbar-fill{
+    background-color: black;
+}
+.recom .swiper-slide{
+    width: 260px;
+    height: 280px;
+    padding: 30px;
+}
+.recom .swiper-slide .top{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font: 500 18px "Noto Sans KR", sans-serif;
+    color: #222;
+    transition: all 0.2s;
+}
+.recom .swiper-slide .top:hover{
+    color: #008859;
+}
+.recom .swiper-slide .app{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 1px 3px 7px 0px rgba(0,0,0,0.1);
+    margin-right: 10px;
+}
+.recom .swiper-slide .app_info{
+    margin: 35px 0 13px;
+    font: 300 16px 'Noto Sans KR',sans-serif;
+    color: #2c503e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.recom .swiper-slide .bottom{
+    position: absolute;
+    bottom: 30px;
+    font: 400 14px "Noto Sans KR", sans-serif;
+    color: #0E81A0;
+    display: inline-block;
+    border: 1px solid #0E81A0;
+    padding: 3px 5px 1px;
+    border-radius: 5px;
+    margin: 20px 4px 0 4px;
+}
+.recom .swiper-slide::after{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: calc(100% - 60px);
+    background: #d9e7e4;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.recom .recom_inner .swiper-button-next::after, .recom .recom_inner .swiper-button-prev::after{
+    content: '';
+}
+.recom .recom_inner .swiper-button-next{
+    background: url(../img/exper_next.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 12px;
+    top: 407px;
+    right: 70px;
+}
+.recom .recom_inner .swiper-button-prev{
+    background: url(../img/exper_prev.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 12px;
+    top: 407px;
+    left: 92.5%;
+}
+.recom .recom_inner .fraction{
+    position: absolute;
+    font: 400 16px "Noto Sans KR", sans-serif;
+    color: #888;
+    left: 642px;
+    top: 380px;
+}
+.recom .recom_inner .play_button{
+    position: absolute;
+    right: 20px;
+    top: 385px;
+    cursor: pointer;
+}
+.recom .recom_inner .play_button .start{
+    background: url(../img/play.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 11px;
+    display: none;
+}
+.recom .recom_inner .play_button .stop{
+    background: url(../img/stop.png) no-repeat 50% 50%;
+    width: 9px;
+    height: 11px;
+}
+.recom .recom_inner .play_button .stop.active{
+    display: none;
+}
+.recom .recom_inner .play_button .start.active{
+    display: block;
+}
+
+/* 새소식 */
+.new{
+    width: 1380px;
+    margin: 0 auto;
+}
+.new .new_inner{
+    margin-top: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.new .new_tt{
+    display: flex;
+    justify-content: space-between;
+}
+.new .new_tt h2{
+    font: 600 28px "Noto Sans KR", sans-serif;
+    color: #222;
+    margin-bottom: 20px;
+}
+.new .new_tt p{
+    display: inline-block;
+    color: #0E81A0;
+}
+.new .new_tt a{
+    font-size: 0;
+    padding: 10px;
+    background: #fff url(../img/more.png)50% 50% no-repeat;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #ddd;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+.new .new_tt a:hover{
+    background: #008859 url(../img/more_on.png)50% 50% no-repeat;
+    border: solid 1px #008859;
+}
+
+.new .tab_title{
+    display: flex;
+    border-bottom: 3px solid #eee;
+    margin-bottom: 20px;
+    width: 800px;
+    cursor: pointer;
+}
+
+.new .tab_cont .no{
+    display: none;
+}
+.new .tab_cont .on{
+    display: block;
+}
+.new .tab_title li.on{
+        color: #0E81A0;
+}
+.new .tab_title li.on::after{
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #0E81A0;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-radius: 2px;
+}
+.new .tab_title li{
+    display: block;
+    font: 400 20px "Noto Sans KR", sans-serif;
+    color: #888;
+    padding: 5px 25px 15px;
+    position: relative;
+}
+.new .tab_cont ul li a{
+    display: flex;
+    color: #222;
+    font: 400 18px"Noto Sans KR", sans-serif;
+    padding: 18px 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: space-between;
+}
+.new .tab_cont ul li .on{
+    display: flex;
+    color: #222;
+    font: 400 18px"Noto Sans KR", sans-serif;
+    padding: 18px 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: space-between;
+}
+.new .tab_cont ul li .sub_tt{
+    transition: all 0.2s;
+}
+.new .tab_cont ul li .sub_tt:hover{
+    color: #008859;
+}
+.new .tab_cont .date{
+    font: 400 15px "Noto Sans KR", sans-serif;
+    color: #666;
+}
+.new .tab_cont .sub_tt::before{
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: #333;
+    content: '';
+    vertical-align: 4px;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+/* 푸터 */
+footer{
+    background: #f6f6f6;
+}
+.foot_inner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.foot_inner .foot_top{
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.foot_inner .foot_top ul{
+    display: flex;
+    width: 1380px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+.foot_inner .foot_top ul li{
+    padding-right: 20px;
+}
+.foot_inner .foot_top ul li a{
+    display: block;
+    font: 400 16px/24px "Poppins", "Noto Sans KR", sans-serif;
+    color: #222;
+    transition: all 0.2s;
+}
+.foot_inner .foot_top ul li a:hover{
+    text-decoration: underline;
+}
+.foot_inner .foot_top ul li .color{
+    color: #0E81A0;
+}
+.foot_inner .foot_top ul li a::after{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ccc;
+    content: '';
+    vertical-align: 3px;
+    margin-left: 15px;
+}
+.foot_inner .foot_top ul li:last-child a::after{
+    background: none;
+}
+.foot_inner .foot_bottom{
+    display: flex;
+    margin: 0 auto;
+    width: 1380px;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+address{
+    font-style: normal;
+}
+.foot_inner .fb_left{
+    font: 400 15px "Noto Sans KR", sans-serif;
+    color: #888;
+}
+.foot_inner .fb_left ul{
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+.foot_inner .fb_right ul{
+    display: flex;
+}
+.w_mark{
+    float: right;
+}
+.fb_right .sns ul li a{
+    display: inline-block;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+}
+.fb_right .sns ul li:first-child a{
+    background: url(../img/fb.png) 50% 50% no-repeat;
+}
+.fb_right .sns ul li:nth-child(2) a{
+    background: url(../img/yt.png) 50% 50% no-repeat;
+}
+.fb_right .sns ul li:nth-child(3) a{
+    background: url(../img/bg.png) 50% 50% no-repeat;
+}
+.fb_right .sns ul li:last-child a{
+    background: url(../img/in.png) 50% 50% no-repeat;
+}
+
+/* 탑버튼 */
+#top{
+    position: fixed;
+    z-index: 1000;
+    width: 70px;
+    height: 70px;
+    background: #555;
+    color: #fff;
+    border-radius: 50%;
+    font: 500 16px 'Noto Sans KR',sans-serif;
+    text-align: center;
+    padding: 19px;
+    bottom: 20px;
+    right: 40px;
+    /* display: none; */
+}
+#top::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 7px;
+    background: url(../img/top_arr.png)no-repeat 50% 50%;
+    margin-bottom: 3px;
+}
+
+
+
+
+/* all */
+.a_menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 40px 60px;
+    background: #fff;
+    z-index: 200;
+    display: none;
+}
+.a_menu .title{
+    color: #0E81A0;
+    font: 700 40px "Noto Sans KR" , sans-serif;
+    text-align: center;
+}
+.a_menu .close{
+    position: absolute;
+    font-size: 0;
+    top: 0px;
+    right: 50px;
+    width: 90px;
+    height: 90px;
+    padding: 25px 30px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    background: #0E81A0 url(../img/pop_close.png) no-repeat 50% 50%;
+}
+.a_menu .menu_con{
+    width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.a_menu .menu{
+    overflow-y: scroll;
+} 
+.menu > li{
+    margin-bottom: 50px;
+}
+.menu > li .dep01{
+    width: 100%;
+    padding-left: 5px;
+    font: 500 26px "Noto Sans KR", sans-serif;
+    color: #333;
+}
+
+.menu > li .dep02{
+    width: 100%;
+    padding: 0 5px;
+    overflow: hidden;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu > li .dep02 > li{
+    width: 20%;
+    padding-right: 15px;
+    margin-top: 20px;
+    float: left;
+}
+.menu > li .dep02 > li > p a{
+    display: block;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font: 500 18px "Noto Sans KR", sans-serif;
+    color: #222;
+    text-align: center;
+    transition: all .2s;
+    background: #f6f6f6;
+}
+.menu > li .dep02 > li > p a:hover{
+    color: #0E81A0;
+}
+.menu .dep03{
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    margin-top: 10px;
+}
+.dep03 li a{
+    font: 500 16px "Noto Sans KR", sans-serif;
+    color: #555;
+    transition: all .2s;
+}
+.dep03 li a:hover{
+    color: #0E81A0;
+}
+.menu > li .dep02 > li > ul li{
+    position: relative;
+    margin-top: 5px;
+    padding-left: 18px;
+}
+.menu > li .dep02 > li > ul li::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #ddd;
+    left: 5px;
+    top: 12px;
+    border-radius: 50%;
+}
